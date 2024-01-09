@@ -1,4 +1,4 @@
 <template>
   <div>Hello World</div>
-  <Counter></Counter>
+  <Counter class="upper"></Counter>
 </template>
