@@ -1,23 +1,13 @@
 <template>
   <div>
-   <ul>
-    <li v-for="(x,k) in persons">
-      {{ k }} - {{ x.name }}
-    </li>
-   </ul>
+    {{ count }}
+   <button @click.stop.prevent="count = $event.target">press</button>
   </div>
 </template>
 
 <script setup>
 import { computed, reactive, ref } from "vue"
 
-const persons = reactive({
-  team1: {
-    name: "niladri"
-  },
-  team2: {
-    name: "mouma"
-  }
-})
+const count = ref("Test");
 
 </script>
