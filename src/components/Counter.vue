@@ -1,25 +1,23 @@
 <template>
-  <div :style="[styleObj, { backgroundColor: ['blue', 'yellow', 'pink'] }]">
-    Hi i am Niladri
+  <div>
+   <ul>
+    <li v-for="(x,k) in persons">
+      {{ k }} - {{ x.name }}
+    </li>
+   </ul>
   </div>
 </template>
 
 <script setup>
-
 import { computed, reactive, ref } from "vue"
 
-const color = ref("red");
-const fontSize = ref(40);
-
-const styleObj = computed(() => {
-  return {
-    color: color.value,
-    fontSize: fontSize.value + 'px'
+const persons = reactive({
+  team1: {
+    name: "niladri"
+  },
+  team2: {
+    name: "mouma"
   }
 })
-
-setTimeout(() => {
-  color.value = 'blue';
-},2000)
 
 </script>
