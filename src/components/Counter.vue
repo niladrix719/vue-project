@@ -1,13 +1,19 @@
 <template>
+
   <div>
-    {{ count }}
-   <button @click.stop.prevent="count = $event.target">press</button>
+    {{ obj.val }}
+    <button @click="obj.val++">Click</button>
   </div>
+  
 </template>
 
 <script setup>
-import { computed, reactive, ref } from "vue"
+import { computed, reactive, ref, watch } from "vue";
 
-const count = ref("Test");
+const obj = reactive({ val: 0, is: true, oj: { first: "first" , second: "second"} });
+
+watch(obj.oj, (objNew) => {
+  console.log(objNew.val);
+})
 
 </script>
