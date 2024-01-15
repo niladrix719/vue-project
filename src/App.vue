@@ -1,8 +1,9 @@
 <template>
-  <div>Hello World</div>
-  <Counter class="upper" greet="Hi i am Niladri" />
+  <div :class="{[myStyle]: isTrue}">Hello World</div>
+  <!-- <Counter class="upper" greet="Hi i am Niladri" /> -->
 </template>
 
 <script setup>
-import Counter from "./components/Counter.vue";
+const myStyle = 'nice';
+const isTrue = true;
 </script>
